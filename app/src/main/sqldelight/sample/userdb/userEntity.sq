@@ -1,0 +1,23 @@
+CREATE TABLE userEntity (
+    id INTEGER NOT NULL PRIMARY KEY,
+    firstName TEXT NOT NULL,
+    lastName TEXT NOT NULL
+);
+
+getUserById:
+    SELECT *
+    FROM userEntity
+    WHERE id  = :id;
+
+getAllUser:
+    SELECT *
+    FROM userEntity;
+
+insertUser:
+    INSERT OR REPLACE
+    INTO userEntity
+    VALUES(?,?,?);
+
+deletePersonById:
+    DELETE FROM userEntity
+    WHERE id = :id;
